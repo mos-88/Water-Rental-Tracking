@@ -9,7 +9,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "build": "npx expo export --platform web --clear"
+    "build": "npx expo export --platform web --clear && node -e \"const fs=require('fs'); fs.rmSync('public',{recursive:true,force:true}); fs.cpSync('dist','public',{recursive:true});\""
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.0",
